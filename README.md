@@ -4,7 +4,10 @@ Proyecto Segundo Parcial Aplicaciones Distribuidas
 
 Proyecto desarrollado para la asignatura Aplicaciones Distribuidas.
 
-
+#Integrantes
+  - 
+  -
+  -Zambrano Valverde Luis
 
 ## Tecnologías
 - Python
