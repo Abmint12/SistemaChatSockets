@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <h1>💬 Sistema Chat</h1>
+
+    <form action="/chat" method="POST">
+
+        <input
+            type="text"
+            name="usuario"
+            placeholder="Ingrese su nombre"
+            required>
+
+        <button type="submit">
+            Entrar al chat
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
