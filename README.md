@@ -5,8 +5,8 @@ Proyecto Segundo Parcial Aplicaciones Distribuidas
 Proyecto desarrollado para la asignatura Aplicaciones Distribuidas.
 
 #Integrantes
-  - 
-  -
+  - Michael Goya Medina
+  -Joselyne Sarmiento Amaya
   -Zambrano Valverde Luis
 
 ## Tecnologías
