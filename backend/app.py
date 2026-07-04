@@ -1,31 +1,43 @@
-from flask import Flask, render_template, request,redirect
-from flask_socketio import SocketIO
+import os
+from flask import Flask, render_template, request, redirect, url_for
+from flask_socketio import SocketIO, emit
 
-app= Flask(__name__)
-app.config["SECRET_KEY"]= "chat-secret"
+#  Rutas base del proyecto
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-socketio=SocketIO(app)
+app = Flask(
+    __name__,
+    template_folder=os.path.join(BASE_DIR, "..", "templates")
+)
 
-usuarios= []
+app.config["SECRET_KEY"] = "chat-secret"
 
+socketio = SocketIO(app)
 
+usuarios = []
+
+# Login
 @app.route("/")
-def login():    
-    return render_tmeplate("login.html")
+def login():
+    return render_template("login.html")
 
-@app.route("/chat",methods=["POST"])
+
+#  Chat (recibe usuario)
+@app.route("/chat", methods=["POST", "GET"])
 def chat():
-    
-    usuario=request.form["usuario"]
+    if request.method == "POST":
+        usuario = request.form["usuario"]
+        return render_template("chat.html", usuario=usuario)
 
-    return render_template(
-        "chat.html",
-        usuario=usuario
-    )
+    return redirect(url_for("login"))
 
-@app.route("/")
-def inicio():
-    return "Servidor del chat funcionando"
 
-if __name__=="__main__":
+#  SocketIO connect
+@socketio.on("connect")
+def conectar():
+    print("Un usuario se conectó")
+
+
+#  Ejecutar servidor
+if __name__ == "__main__":
     socketio.run(app, debug=True)
