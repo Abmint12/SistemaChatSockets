@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatRT · Iniciar sesión</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body class="auth-body">
+  <main class="auth-card">
+    <div class="brand">
+      <div class="brand-logo">⚡</div>
+      <h1>ChatRT</h1>
+      <p class="brand-sub">Chat en tiempo real con WebSockets</p>
+    </div>
+
+    <div class="tabs">
+      <button id="tab-login" class="tab active" type="button">Iniciar sesión</button>
+      <button id="tab-register" class="tab" type="button">Registrarse</button>
+    </div>
+
+    <!-- Formulario de login -->
+    <form id="form-login" class="auth-form">
+      <label>Usuario
+        <input type="text" name="username" autocomplete="username" required />
+      </label>
+      <label>Contraseña
+        <input type="password" name="password" autocomplete="current-password" required />
+      </label>
+      <button class="btn-primary" type="submit">Entrar</button>
+    </form>
+
+    <!-- Formulario de registro -->
+    <form id="form-register" class="auth-form hidden">
+      <label>Usuario
+        <input type="text" name="username" minlength="3" maxlength="30" required />
+      </label>
+      <label>Correo
+        <input type="email" name="email" required />
+      </label>
+      <label>Contraseña
+        <input type="password" name="password" minlength="6" required />
+      </label>
+      <button class="btn-primary" type="submit">Crear cuenta</button>
+    </form>
+
+    <p id="auth-msg" class="auth-msg"></p>
+  </main>
+
+  <script src="/static/js/auth.js"></script>
+</body>
+</html>
