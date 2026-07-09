@@ -1,27 +1,5 @@
-# Blueprint de Render (Infrastructure as Code).
-# Con este archivo, Render crea el servicio web y la base de datos
-# automáticamente al conectar el repositorio (Blueprint -> New).
-services:
-  - type: web
-    name: chat-tiempo-real
-    runtime: python
-    plan: free
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
-    healthCheckPath: /health
-    envVars:
-      - key: PYTHON_VERSION
-        value: "3.12.4"
-      # SECRET_KEY se genera automáticamente y de forma segura.
-      - key: SECRET_KEY
-        generateValue: true
-      # Conecta la base de datos PostgreSQL definida abajo.
-      # Si eliminas este bloque y la sección "databases", la app usa SQLite.
-      - key: DATABASE_URL
-        fromDatabase:
-          name: chat-db
-          property: connectionString
-
-databases:
-  - name: chat-db
-    plan: free
+envVars:
+  - key: DATABASE_URL
+    fromDatabase:
+      name: chat-db
+      property: connectionString
