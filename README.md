@@ -1,3 +1,11 @@
+# SistemaChatSockets
+Proyecto Segundo Parcial Aplicaciones Distribuidas
+## Integrantes
+
+- **Michael Goya Medina**
+- **Joselyne Sarmiento Amaya**
+- **Zambrano Valverde Luis**
+
 # ChatRT — Sistema de Chat en Tiempo Real
 
 Sistema de chat en tiempo real con **sockets (WebSockets)** que permite a múltiples
