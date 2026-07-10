@@ -98,7 +98,7 @@ uvicorn app.main:app --host 0.0.0.0 --port $PORT
 
 > Si eliminas el bloque `databases` y la variable `DATABASE_URL` de `render.yaml`,
 > la aplicación usa SQLite automáticamente.
-
+https://chat-tiempo-real-dt0y.onrender.com/
 ---
 
 ## 🔌 API y protocolo
